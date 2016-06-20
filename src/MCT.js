@@ -4,14 +4,16 @@ define([
     'uuid',
     './api/api',
     'text!./adapter/templates/edit-object-replacement.html',
-    './ui/Dialog'
+    './ui/Dialog',
+    './api/events/Events'
 ], function (
     EventEmitter,
     legacyRegistry,
     uuid,
     api,
     editObjectTemplate,
-    Dialog
+    Dialog,
+    Events
 ) {
     function MCT() {
         EventEmitter.call(this);
@@ -98,6 +100,8 @@ define([
         main: "MAIN",
         toolbar: "TOOLBAR"
     };
+
+    MCT.prototype.events = new Events();
 
     MCT.prototype.verbs = {
         mutate: function (domainObject, mutator) {
