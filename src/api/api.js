@@ -1,9 +1,12 @@
 define([
-    './Type'
+    './Type',
+    './TimeConductor'
 ], function (
-    Type
+    Type,
+    TimeConductor
 ) {
     return {
-        Type: Type
+        Type: Type,
+        TimeConductor: new TimeConductor()
     };
 });
